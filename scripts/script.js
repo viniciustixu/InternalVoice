@@ -15,4 +15,24 @@ function talk() {
     }
 }
 
+function executarEmHorarioEspecifico(hora, minuto, funcao) {
+    setInterval(function() {
+      const agora = new Date();
+      const horaAtual = agora.getHours();
+      const minutoAtual = agora.getMinutes();
+      if (horaAtual === hora && minutoAtual === minuto) {
+        funcao();
+      }
+    }, 30000); //Verifica a cada 30 sec
+}
+
+
+
+
+
+
+executarEmHorarioEspecifico(15, 03, function() {
+    talk();
+});
+
 document.getElementById("playButton").onclick = talk;
