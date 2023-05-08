@@ -8,9 +8,15 @@
 </head>
 <body>
     <h1>Routine control</h1>
-    <p>Type here what you wanna listen:</p>
-    <input type="text" name="ntxt" id="txt" size="50">
-    <input type="button" value="Play" id="playButton">
+    
+    <div id="container">
+        <div>
+            <input type="number" name="nHora1" id="hora1" max="23" min="0" placeholder="Hora">
+            <input type="number" name="nMinuto1" id="minuto1" max="59" min="0" placeholder="Minuto">
+            <label for="texto1">Tarefa:</label>
+            <input type="text" name="nTexto1" id="texto1">
+        </div>
+    </div>
 
     <script src="scripts/script.js"></script>
 </body>
