@@ -20,15 +20,14 @@ function talk(texto) {
 // Função que define a hora e minuto que o audio sera reproduzido
 
 function executarEmHorarioEspecifico(hora, minuto, funcao) {
-  setInterval(function() {
-    const agora = new Date();
-    const horaAtual = agora.getHours();
-    const minutoAtual = agora.getMinutes();
-    if (horaAtual === hora && minutoAtual === minuto) {
-      funcao();
-    }
-  }, 30000); //Verifica a cada 30 sec
+  const agora = new Date();
+  const horaAtual = agora.getHours();
+  const minutoAtual = agora.getMinutes();
+  if (horaAtual === hora && minutoAtual === minuto) {
+    funcao();
+  }
 }
+
 
 //Função que cria div dinâmicamente
 
