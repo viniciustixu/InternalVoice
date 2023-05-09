@@ -27,7 +27,7 @@ function executarEmHorarioEspecifico(hora, minuto, funcao) {
     if (horaAtual === hora && minutoAtual === minuto) {
       funcao();
     }
-  }, 5000); //Verifica a cada 30 sec
+  }, 30000); //Verifica a cada 30 sec
 }
 
 //Função que cria div dinâmicamente
@@ -93,10 +93,10 @@ function automacao() {
   
 
   for (let i = 1; i <= numFilhos; i++) {
-    let h = document.getElementById(`hora${i}`).value
-    let m = document.getElementById(`minuto${i}`).value
+    let h = Number(document.getElementById(`hora${i}`).value);
+    let m = Number(document.getElementById(`minuto${i}`).value);
     let t = document.getElementById(`texto${i}`).value
-    console.log(h,m,t)
+    console.log( typeof(h),typeof(m),typeof(t))
 
     executarEmHorarioEspecifico(h, m, function() {
       talk(t);
@@ -106,7 +106,7 @@ function automacao() {
 
 }
 
-setInterval(automacao, 10000);
+setInterval(automacao, 60000);
 
 
 
