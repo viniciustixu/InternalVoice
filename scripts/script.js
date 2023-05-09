@@ -27,7 +27,7 @@ function executarEmHorarioEspecifico(hora, minuto, funcao) {
     if (horaAtual === hora && minutoAtual === minuto) {
       funcao();
     }
-  }, 30000); //Verifica a cada 30 sec
+  }, 5000); //Verifica a cada 30 sec
 }
 
 //Função que cria div dinâmicamente
@@ -75,9 +75,38 @@ function criarDiv(hora, minuto) {
   container.appendChild(novaDiv);
 }
 
-criarDiv(2,2);
-criarDiv(3,3);
-criarDiv(4,4);
+
+//Função de criar tarefa nova
+
+let incremento = 2
+
+function adicionarNovaTarefa() {
+  criarDiv(incremento,incremento);
+  incremento++
+}
+
+
+function automacao() {
+  const container = document.getElementById("container");
+  let numFilhos = container.childElementCount;
+  
+  
+
+  for (let i = 1; i <= numFilhos; i++) {
+    let h = document.getElementById(`hora${i}`).value
+    let m = document.getElementById(`minuto${i}`).value
+    let t = document.getElementById(`texto${i}`).value
+    console.log(h,m,t)
+
+    executarEmHorarioEspecifico(h, m, function() {
+      talk(t);
+      
+  });
+  }
+
+}
+
+setInterval(automacao, 10000);
 
 
 
@@ -99,15 +128,15 @@ criarDiv(4,4);
 
 
 
-
-
-
-executarEmHorarioEspecifico(21, 54, function() {
+/*
+executarEmHorarioEspecifico(1, 6, function() {
     talk('Deu certo');
 });
 
 
 
-//document.getElementById("playButton").onclick = function() {
-//  talk('Testando função de audio');
-//};
+document.getElementById("playButton").onclick = function() {
+  talk('Testando função de audio');
+};
+
+*/
