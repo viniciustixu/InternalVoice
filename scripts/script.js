@@ -84,6 +84,7 @@ function adicionarNovaTarefa() {
   incremento++
 }
 
+// Função de automação que define as chamadas a cada um minuto
 
 function automacao() {
   const container = document.getElementById("container");
@@ -102,40 +103,6 @@ function automacao() {
       
   });
   }
-
 }
 
 setInterval(automacao, 60000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-executarEmHorarioEspecifico(1, 6, function() {
-    talk('Deu certo');
-});
-
-
-
-document.getElementById("playButton").onclick = function() {
-  talk('Testando função de audio');
-};
-
-*/
