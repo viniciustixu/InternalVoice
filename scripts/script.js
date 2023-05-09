@@ -32,10 +32,9 @@ function executarEmHorarioEspecifico(hora, minuto, funcao) {
 //Função que cria div dinâmicamente
 
 function criarDiv(hora, minuto) {
-  // Criar o elemento div
+  
   const novaDiv = document.createElement("div");
 
-  // Criar os elementos input
   const inputHora = document.createElement("input");
   inputHora.type = "number";
   inputHora.name = "nHora" + hora;
@@ -52,24 +51,20 @@ function criarDiv(hora, minuto) {
   inputMinuto.min = "0";
   inputMinuto.placeholder = "Minuto";
 
-  // Criar o elemento label
   const label = document.createElement("label");
   label.htmlFor = "texto" + hora;
   label.innerText = "Tarefa:";
 
-  // Criar o elemento input para o texto
   const inputTexto = document.createElement("input");
   inputTexto.type = "text";
   inputTexto.name = "nTexto" + hora;
   inputTexto.id = "texto" + hora;
 
-  // Adicionar os elementos à div
   novaDiv.appendChild(inputHora);
   novaDiv.appendChild(inputMinuto);
   novaDiv.appendChild(label);
   novaDiv.appendChild(inputTexto);
 
-  // Adicionar a div ao documento
   const container = document.getElementById("container");
   container.appendChild(novaDiv);
 }
@@ -90,17 +85,14 @@ function automacao() {
   const container = document.getElementById("container");
   let numFilhos = container.childElementCount;
   
-  
-
   for (let i = 1; i <= numFilhos; i++) {
     let h = Number(document.getElementById(`hora${i}`).value);
     let m = Number(document.getElementById(`minuto${i}`).value);
     let t = document.getElementById(`texto${i}`).value
-    console.log( typeof(h),typeof(m),typeof(t))
+    console.log(h, m, t)
 
     executarEmHorarioEspecifico(h, m, function() {
-      talk(t);
-      
+      talk(t);  
   });
   }
 }
