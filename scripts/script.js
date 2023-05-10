@@ -98,3 +98,39 @@ function automacao() {
 }
 
 setInterval(automacao, 60000);
+
+//Função de localStorage
+
+function GuardandoInformacoes() {
+  const container = document.getElementById("container");
+  const numFilhos = container.childElementCount;
+  localStorage.clear
+  for (let i = 1; i <= numFilhos; i++) {
+    let horaId = document.getElementById(`hora${i}`).value
+    let minutoId = document.getElementById(`minuto${i}`).value
+    let texto = document.getElementById(`texto${i}`).value
+    
+    localStorage.setItem(`hora${i}`, horaId);
+    localStorage.setItem(`minuto${i}`, minutoId);
+    localStorage.setItem(`texto${i}`, texto)
+    localStorage.setItem('incremento', i)
+  };
+}
+
+setInterval(GuardandoInformacoes, 5000);
+
+// Resgatando localStorage
+
+function resgatandoLocalStorage() {
+  let incremento = parseInt(localStorage.getItem('incremento'))
+  let hora = ""
+  let minuto = ""
+  let texto = ""
+  for (let i = 1; i < incremento; i++) {
+    hora = parseInt(localStorage.getItem(`hora${i}`));
+    minuto = parseInt(localStorage.getItem(`minuto${i}`));
+    texto = localStorage.getItem(`texto${i}`)
+
+    document.getElementById(`hora${i}`).innerHTML = hora
+  }
+}
