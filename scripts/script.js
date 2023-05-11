@@ -99,12 +99,12 @@ function automacao() {
 
 setInterval(automacao, 60000);
 
-//Função de localStorage
+// Guardando no localStorage
 
 function GuardandoInformacoes() {
   const container = document.getElementById("container");
   const numFilhos = container.childElementCount;
-  localStorage.clear
+  localStorage.clear();
   for (let i = 1; i <= numFilhos; i++) {
     let horaId = document.getElementById(`hora${i}`).value
     let minutoId = document.getElementById(`minuto${i}`).value
@@ -126,11 +126,31 @@ function resgatandoLocalStorage() {
   let hora = ""
   let minuto = ""
   let texto = ""
+
   for (let i = 1; i < incremento; i++) {
+    adicionarNovaTarefa()
+  }
+
+  for (let i = 1; i <= incremento; i++) {
     hora = parseInt(localStorage.getItem(`hora${i}`));
     minuto = parseInt(localStorage.getItem(`minuto${i}`));
     texto = localStorage.getItem(`texto${i}`)
 
-    document.getElementById(`hora${i}`).innerHTML = hora
+    document.getElementById(`hora${i}`).value = hora
+    document.getElementById(`minuto${i}`).value = minuto
+    document.getElementById(`texto${i}`).value = texto
+  }
+}
+
+// Removendo ultima tarefa
+
+function removerTarefa() {
+  let container = document.getElementById('container');
+  let ultimoFilho = container.lastChild;
+  let filhos = container.children;
+  
+
+  if (filhos.length > 1) {
+    ultimoFilho.remove();
   }
 }
