@@ -73,11 +73,13 @@ function criarDiv(hora, minuto) {
 
 //Função de criar tarefa nova
 
-let incremento = 2
+
 
 function adicionarNovaTarefa() {
-  criarDiv(incremento,incremento);
-  incremento++
+  const container = document.getElementById("container");
+  let numFilhos = container.childElementCount;
+
+  criarDiv(numFilhos + 1,numFilhos + 1);
 }
 
 // Função de automação que define as chamadas a cada um minuto
@@ -155,3 +157,9 @@ function removerTarefa() {
     ultimoFilho.remove();
   }
 }
+/*
+// Adicionar uma hora a todas as tarefas
+
+function adiarEmUmaHora() {
+  for (let i = 0; i < ;)
+}*/
