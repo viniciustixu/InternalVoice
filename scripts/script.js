@@ -166,10 +166,9 @@ function adiarEmUmaHora() {
 
   for (let i = 0; i < numFilhos; i++) {
     let h = document.getElementById(`hora${i + 1}`);
-    let v = document.getElementById(`hora${i + 1}`).value;
-    v++
-    h.value = v;
+    h.value++
   }
+  validarHorario()
 }
 
 // Atrasar uma hora a todas as tarefas
@@ -180,8 +179,24 @@ function adiantarEmUmaHora() {
 
   for (let i = 0; i < numFilhos; i++) {
     let h = document.getElementById(`hora${i + 1}`);
-    let v = document.getElementById(`hora${i + 1}`).value;
-    v--
-    h.value = v;
+    h.value-- 
+  }
+  validarHorario()
+}
+
+// Validar horarios inexistentes
+
+function validarHorario() {
+  const container = document.getElementById("container");
+  let numFilhos = container.childElementCount;
+
+  for (let i = 0; i < numFilhos; i++) {
+    let h = document.getElementById(`hora${i + 1}`);
+    
+    if (h.value == 24) {
+      h.value = 0
+    } else if (h.value == -1) {
+      h.value = 23
+    }
   }
 }
