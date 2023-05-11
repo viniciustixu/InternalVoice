@@ -157,9 +157,31 @@ function removerTarefa() {
     ultimoFilho.remove();
   }
 }
-/*
+
 // Adicionar uma hora a todas as tarefas
 
 function adiarEmUmaHora() {
-  for (let i = 0; i < ;)
-}*/
+  const container = document.getElementById("container");
+  let numFilhos = container.childElementCount;
+
+  for (let i = 0; i < numFilhos; i++) {
+    let h = document.getElementById(`hora${i + 1}`);
+    let v = document.getElementById(`hora${i + 1}`).value;
+    v++
+    h.value = v;
+  }
+}
+
+// Atrasar uma hora a todas as tarefas
+
+function adiantarEmUmaHora() {
+  const container = document.getElementById("container");
+  let numFilhos = container.childElementCount;
+
+  for (let i = 0; i < numFilhos; i++) {
+    let h = document.getElementById(`hora${i + 1}`);
+    let v = document.getElementById(`hora${i + 1}`).value;
+    v--
+    h.value = v;
+  }
+}
