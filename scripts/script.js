@@ -92,7 +92,6 @@ function automacao() {
     let h = Number(document.getElementById(`hora${i}`).value);
     let m = Number(document.getElementById(`minuto${i}`).value);
     let t = document.getElementById(`texto${i}`).value
-    console.log(h, m, t)
 
     executarEmHorarioEspecifico(h, m, function() {
       talk(t);  
