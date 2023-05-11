@@ -33,7 +33,8 @@ function executarEmHorarioEspecifico(hora, minuto, funcao) {
 
 function criarDiv(hora, minuto) {
   
-  const novaDiv = document.createElement("div");
+  const novaDiv = document.createElement("div")
+  novaDiv.className = "item"
 
   const inputHora = document.createElement("input");
   inputHora.type = "number";
@@ -142,7 +143,7 @@ function resgatandoLocalStorage() {
   }
 }
 
-// Removendo ultima tarefa
+// Remover ultima tarefa
 
 function removerTarefa() {
   let container = document.getElementById('container');
