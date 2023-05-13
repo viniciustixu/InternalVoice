@@ -3,3 +3,30 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+h1 {
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: auto;
+    background-color: lightgray;
+}
+
+.item {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    padding: 2px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+}
