@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="estilos/indexStyle.css">
     <title>InternalVoice</title>
 </head>
-<body onload="resgatandoLocalStorage()">
+<body>
     <h1>Routine control</h1>
 
     <div id="container">
@@ -21,11 +21,12 @@
 
 
     <div class="botoes">
-        <input type="button" value="Nova tarefa" onclick="adicionarNovaTarefa()">
-        <input type="button" value="Remover tarefa" onclick="removerTarefa()">
-        <input type="button" value="Adiar 1 hora" onclick="adiarEmUmaHora()">
-        <input type="button" value="Adiantar 1 hora" onclick="adiantarEmUmaHora()">
+        <input type="button" value="Nova tarefa" id="novaTarefaBtn">
+        <input type="button" value="Remover tarefa" id="removerTarefaBtn">
+        <input type="button" value="Adiar 1 hora" id="adiarUmaHoraBtn">
+        <input type="button" value="Adiantar 1 hora" id="adiantarUmaHoraBtn">
     </div>
+    
 
     <script src="scripts/script.js"></script>
 </body>

@@ -203,3 +203,12 @@ function validarHorario() {
 
 var alerta = new Audio();
 alerta.src = '../sounds/alert.wav';
+
+
+// Contornando restrição da extensão
+
+document.addEventListener("DOMContentLoaded", resgatandoLocalStorage);
+document.getElementById("novaTarefaBtn").addEventListener("click", adicionarNovaTarefa);
+document.getElementById("removerTarefaBtn").addEventListener("click", removerTarefa);
+document.getElementById("adiarUmaHoraBtn").addEventListener("click", adiarEmUmaHora);
+document.getElementById("adiantarUmaHoraBtn").addEventListener("click", adiantarEmUmaHora);
