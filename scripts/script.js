@@ -13,6 +13,7 @@ function talk(texto) {
       msg.pitch = 0.8;                // tom
       msg.text = text;
       msg.lang = "pt-BR";
+      alerta.play();
       synth.speak(msg);
   }
 }
@@ -72,8 +73,6 @@ function criarDiv(hora, minuto) {
 
 
 //Função de criar tarefa nova
-
-
 
 function adicionarNovaTarefa() {
   const container = document.getElementById("container");
@@ -199,3 +198,8 @@ function validarHorario() {
     }
   }
 }
+
+// Som de alerta antes de mensagem
+
+var alerta = new Audio();
+alerta.src = '../sounds/alert.wav';
