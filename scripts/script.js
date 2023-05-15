@@ -29,7 +29,6 @@ function executarEmHorarioEspecifico(hora, minuto, funcao) {
   }
 }
 
-
 //Função que cria div dinâmicamente
 
 function criarDiv(hora, minuto) {
@@ -93,7 +92,7 @@ function automacao() {
     let t = document.getElementById(`texto${i}`).value
 
     executarEmHorarioEspecifico(h, m, function() {
-      talk(t);  
+      talk(t);
   });
   }
 }
