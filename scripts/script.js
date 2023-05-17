@@ -213,3 +213,4 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("adiarUmaHoraBtn").addEventListener("click", adiarEmUmaHora);
   document.getElementById("adiantarUmaHoraBtn").addEventListener("click", adiantarEmUmaHora);
 });
+
