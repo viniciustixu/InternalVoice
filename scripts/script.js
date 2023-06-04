@@ -201,7 +201,7 @@ function validarHorario() {
 // Som de alerta antes de mensagem
 
 var alerta = new Audio();
-alerta.src = '../sounds/alert.wav';
+alerta.src = '../sounds/alert.mp3';
 
 
 // Contornando restrição da extensão
