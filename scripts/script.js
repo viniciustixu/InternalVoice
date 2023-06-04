@@ -6,7 +6,6 @@ function talk(texto) {
   let text = texto
   let voices = synth.getVoices();
   if (voices.length !== 0) {
-      console.log("talk");
       let msg = new SpeechSynthesisUtterance();
       msg.voice = voices[19];        // voz
       msg.rate = 1;                 // Velocidade
