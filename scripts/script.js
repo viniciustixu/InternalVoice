@@ -206,11 +206,10 @@ alerta.src = 'https://viniciustixu.github.io/InternalVoice/sounds/alert.mp3';
 
 // Contornando restrição da extensão
 
-document.addEventListener("DOMContentLoaded", resgatandoLocalStorage);
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+  resgatandoLocalStorage();
   document.getElementById("novaTarefaBtn").addEventListener("click", adicionarNovaTarefa);
   document.getElementById("removerTarefaBtn").addEventListener("click", removerTarefa);
   document.getElementById("adiarUmaHoraBtn").addEventListener("click", adiarEmUmaHora);
   document.getElementById("adiantarUmaHoraBtn").addEventListener("click", adiantarEmUmaHora);
 });
-
