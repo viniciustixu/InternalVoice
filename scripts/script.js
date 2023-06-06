@@ -147,7 +147,6 @@ function removerTarefa() {
   let container = document.getElementById('container');
   let ultimoFilho = container.lastChild;
   let filhos = container.children;
-  
 
   if (filhos.length > 1) {
     ultimoFilho.remove();
@@ -211,4 +210,41 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("removerTarefaBtn").addEventListener("click", removerTarefa);
   document.getElementById("adiarUmaHoraBtn").addEventListener("click", adiarEmUmaHora);
   document.getElementById("adiantarUmaHoraBtn").addEventListener("click", adiantarEmUmaHora);
+  document.getElementById("botaoDarkMode").addEventListener("click", darkMode)
 });
+
+// Imperdir botão direito
+
+document.addEventListener('contextmenu', function(event) {
+  event.preventDefault();
+});
+
+// Dark mode
+
+function darkMode() {
+  const root = document.documentElement;
+  let isDarkMode = root.classList.contains('dark-mode');
+  let imagem = document.getElementById("botaoDarkMode");
+
+  if (!isDarkMode) {
+    root.classList.add('dark-mode');
+
+    root.style.setProperty('--primeiraCor', '#7289da');
+    root.style.setProperty('--segundaCor', '#424549');
+    root.style.setProperty('--terceiraCor', '#36393e');
+    root.style.setProperty('--quartaCor', '#282b30');
+    root.style.setProperty('--quintaCor', '#1e2124');
+    root.style.setProperty('--sextaCor', 'White');
+    imagem.src = "day.png"
+  } else {
+    root.classList.remove('dark-mode');
+
+    root.style.setProperty('--primeiraCor', 'White');
+    root.style.setProperty('--segundaCor', 'lightGray');
+    root.style.setProperty('--terceiraCor', 'White');
+    root.style.setProperty('--quartaCor', 'White');
+    root.style.setProperty('--quintaCor', 'green');
+    root.style.setProperty('--sextaCor', 'Black');
+    imagem.src = "night.png"
+  }
+} darkMode(); darkMode(); //Chamando duas vezes (Uma pra criar a classlist, e outra pra deixar o whiteMode default)
