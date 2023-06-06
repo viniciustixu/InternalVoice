@@ -34,3 +34,11 @@ body {
     margin-top: 10px;
     gap: 5px;
 }
+
+:root {
+    --primeiraCor: #7289da;
+    --segundaCor: #424549;
+    --terceiraCor: #36393e;
+    --quartaCor: #282b30;
+    --quintaCor: #1e2124;
+}
